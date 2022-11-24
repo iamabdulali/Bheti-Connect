@@ -2,11 +2,11 @@ import React from "react";
 import { useField } from "formik"; 
 import styled from "styled-components";
 
-export const Field = ({ label,otherText, ...props }) => {
+export const Field = ({ label,star,otherText, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <>
-      <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+      <StyledLabel htmlFor={props.id || props.name}>{label}<StyledStar>{star}</StyledStar></StyledLabel>
       <StyledParagraph>{otherText}</StyledParagraph>
       <StyledInput {...field} {...props} />
       {meta.touched && meta.error ? (
@@ -16,6 +16,10 @@ export const Field = ({ label,otherText, ...props }) => {
   );
 };
 
+export const StyledStar = styled.span`
+  color: #FF0000;
+  font-size:1.4rem;
+`
 
 // Styled components ....
 const StyledSelect = styled.select`
@@ -91,11 +95,11 @@ margin-bottom: 1.5rem;
 resize: vertical;
 `
 
-export const MySelect = ({ label,otherText, ...props }) => {
+export const MySelect = ({ label,star,otherText, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <>
-      <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+      <StyledLabel htmlFor={props.id || props.name}>{label} <StyledStar>{star}</StyledStar></StyledLabel>
       <StyledParagraph>{otherText}</StyledParagraph>
       <StyledSelect {...field} {...props} />
       {meta.touched && meta.error ? (
@@ -105,11 +109,12 @@ export const MySelect = ({ label,otherText, ...props }) => {
   );
 };
 
-export const MyTextArea = ({label, ...props}) => {
+export const MyTextArea = ({label,otherText, ...props}) => {
   const [field, meta] = useField(props);
   return (
       <>
           <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+          <StyledParagraph>{otherText}</StyledParagraph>
           <StyledTextArea {...field} {...props} />
           {meta.touched && meta.error ? (
               <StyledErrorMessage className="error">{meta.error}</StyledErrorMessage>
@@ -118,11 +123,11 @@ export const MyTextArea = ({label, ...props}) => {
   );
 };
 
-export const FileInput = ({label, ...props}) => {
+export const FileInput = ({label,star, ...props}) => {
   const [field, meta] = useField(props);
   return (
       <>
-          <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+          <StyledLabel htmlFor={props.id || props.name}>{label} <StyledStar>{star}</StyledStar></StyledLabel>
           <StyledFileInput {...field} {...props} />
           {meta.touched && meta.error ? (
               <StyledErrorMessage className="error">{meta.error}</StyledErrorMessage>
