@@ -38,19 +38,21 @@ const FormOne = () => {
           }}
         >
           <Form className="investment-form">
-            <Field label="Votre nom *" name="yourName" type="text" />
+            <Field label="Votre nom" star={`*`} name="yourName" type="text" />
             <Field
-              label="Votre adresse e-mail *"
+              label="Votre adresse e-mail"
               name="email"
               type="email"
               otherText={`Veuillez noter l'adresse à laquelle vous souhaitez 
             recevoir le dossier`}
+            star={`*`}
             />
             <MySelect
-              label="Opportunité d'investissement *"
+              label="Opportunité d'investissement"
               name="ageYear"
               otherText={`Merci d'indiquer le projet pour lequel vous souhaitez entrer 
               en contact avec le(s) fondateur(s)`}
+              star={`*`}
             >
               <option value="">Sélectionnez une option</option>
               <option value="0-3">0-3 mois</option>
@@ -60,11 +62,12 @@ const FormOne = () => {
             </MySelect>
             
             <Field
-              label="Votre société d'investissement *"
+              label="Votre société d'investissement"
               name="investmentComapny"
               type="text"
               otherText={`Veuillez indiquer si vous êtes un Business Angel ou le nom 
               de la société d'investissement pour laquelle vous travaillez`}
+              star={`*`}
             />
 
             <MyTextArea
