@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Field, FileInput, StyledLabel } from "../../FormikFields/FormikFields";
+import { Field, FileInput, StyledLabel, StyledStar } from "../../FormikFields/FormikFields";
 import attach from "../../formAssets/Attach.svg";
 import drop from "../../formAssets/drop-file.svg";
 
@@ -12,7 +12,7 @@ const StepFour = (props) => {
   return (
     <>
       <StyledLabel htmlFor="files">
-        Quel secteur correspond le mieux à votre activité ? *
+        Quel secteur correspond le mieux à votre activité ? <StyledStar>*</StyledStar> 
       </StyledLabel>
      
         <div>

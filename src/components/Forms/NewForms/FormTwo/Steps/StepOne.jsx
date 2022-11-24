@@ -21,11 +21,12 @@ const StepOne = (props) => {
 
   return (
     <>
-         <Field label={companyName.label} name={companyName.name} type="text" />
-         <Field label={startUp.label} name={startUp.name} type="text" />
+         <Field label={companyName.label} star={`*`} name={companyName.name} type="text" />
+         <Field label={startUp.label} star={`*`} name={startUp.name} type="text" />
          <MySelect
               label={yearsOfActivity.label}
               name={yearsOfActivity.name}
+              star={`*`}
             >
               <option value="">Sélectionnez une option</option>
               <option value="0-2">0-2 ans</option>
@@ -34,8 +35,8 @@ const StepOne = (props) => {
               <option value="10-15">10-15 ans</option>
               <option value="15+">+15 ans</option>
             </MySelect>
-            <Field label={description.label} name={description.name} type="text" />
-            <MySelect
+            <Field label={description.label} star={`*`} name={description.name} type="text" />
+            <MySelect star={`*`}
               label={sector.label}
               name={sector.name}
             >
